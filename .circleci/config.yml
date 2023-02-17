@@ -1,55 +1,28 @@
-version: 2.1  # the version of the config circleci file
+version: 2.1
+
+orbs:
+  maven: circleci/maven@1.3.0
 
 jobs:
   build:
-    docker:
-      - image: circleci/openjdk:8-jdk
-    working_directory: ~/workspace
+    executor: maven/default
+    working_directory: ~/my-project
     steps:
       - checkout
       - restore_cache:
-          key: 'dependencies-{{ checksum "pom.xml" }}'
-      - run:
-          name: Install
-          command: mvn clean install
-      - run:
-          name: Install dependencies
-          command: mvn dependency:go-offline
-      - save_cache:
-          key: 'dependencies-{{ checksum "pom.xml" }}'
-          paths:
-            - ~/.m2
-      - run:
-          name: Validate
-          command: mvn -B validate
-      - run:
-          name: Compile
-          command: mvn -B compile
+          keys:
+            - v1-dependencies-{{ checksum "pom.xml" }}
+            - v1-dependencies-
       - run:
           name: Test
-          command: mvn -B test
-    deploy:
-      docker:
-        - image: alpine/git
-      steps:
-        - checkout
-        - run:
-          name: Deploy to Heroku
-          command: git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
+          command: |
+            mvn -s ./settings.xml clean test
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: v1-dependencies-{{ checksum "pom.xml" }}
 
 workflows:
-  build-and-deploy:
+  main:
     jobs:
-      - build:
-          filters:
-            branches:
-              only: master
-      - deploy:
-          requires:
-            - build
-          filters:
-            branches:
-              only: master
-  maven_test:
-    jobs:
-      - maven/test
+      - build
