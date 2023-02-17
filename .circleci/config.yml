@@ -25,11 +25,11 @@ workflows:
   maven_test:
     jobs:
       - maven/test
-  build-and-publish:
+  build:
+    when:
+      and:
+        - equal: [ master, << pipeline.git.branch >> ]
     jobs:
-      - publish:
-          filters:
-            branches:
-              only: master
+      - build
 
 
