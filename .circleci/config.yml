@@ -35,6 +35,10 @@ jobs:
 
 
 workflows:
+  upload-to-codecov:
+    jobs:
+      - checkout
+      - codecov/upload
   version: 2
   maven_test:
     jobs:
