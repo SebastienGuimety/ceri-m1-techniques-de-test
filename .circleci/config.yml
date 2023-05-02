@@ -36,6 +36,7 @@ jobs:
             - ~/.m2
           key: v1-dependencies-{{ checksum "pom.xml" }}
 
+
 workflows:
   version: 2
   maven_test:
