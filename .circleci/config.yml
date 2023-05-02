@@ -35,18 +35,16 @@ jobs:
 
 
 workflows:
-  sample:
+  version: 2
+  maven_test:
+    jobs:
+      - maven/test
+  build:
+    when:
+      and:
+        - equal: [ master, << pipeline.git.branch >> ]
     jobs:
       - build
-      - docs-build
-      - docs-deploy:
-          requires:
-            - build
-            - docs-build
-          filters:
-            branches:
-              only: master
-
 
 
 
