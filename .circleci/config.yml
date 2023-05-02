@@ -44,7 +44,7 @@ workflows:
       and:
         - equal: [ master, << pipeline.git.branch >> ]
     jobs:
-      - build-and-test
+      - build
 
 
 
