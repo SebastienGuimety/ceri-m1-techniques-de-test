@@ -17,7 +17,7 @@ jobs:
       - checkout
       - run:
           name: Build project
-          command: mvn -B -Dskiptests clean install
+          command: mvn -B -D skiptests clean install
       - run:
           name: Run tests
           command: mvn test
@@ -45,6 +45,9 @@ workflows:
         - equal: [ master, << pipeline.git.branch >> ]
     jobs:
       - build
+  verification:
+    jobs:
+      - build-and-test
 
 
 
