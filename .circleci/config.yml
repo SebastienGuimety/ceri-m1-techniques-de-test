@@ -13,7 +13,7 @@ jobs:
       - checkout
       - run:
           name: Install codecov
-          command: pip install codecov
+          command: pip3 install codecov
       - run:
           name: Run tests
           command: pytest
