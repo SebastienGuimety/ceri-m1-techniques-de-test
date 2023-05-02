@@ -37,11 +37,11 @@ jobs:
 workflows:
   sample:
     jobs:
-      - build-and-test
+      - build
       - docs-build
       - docs-deploy:
           requires:
-            - build-and-test
+            - build
             - docs-build
           filters:
             branches:
