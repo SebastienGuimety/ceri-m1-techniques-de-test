@@ -20,25 +20,8 @@
 
 
     <module name="NewlineAtEndOfFile"/>
-    <module name="NoWhitespaceBefore">
-        <property name="tokens"
-                  value="COLON,SEMI,RPAREN,RSQUARE,RBRACE"/>
-    </module>
 
-    <module name="RegexpSingleline">
-        <property name="format"
-                  value="^\s*$"/>
-        <property name="message"
-                  value="Line contains only whitespace."/>
-    </module>
 
-    <module name="RightCurly">
-        <property name="option"
-                  value="alone"/>
-        <property name="tokens"
-                  value="CLASS_DEF, METHOD_DEF, CTOR_DEF, LITERAL_IF, LITERAL_ELSE, LITERAL_TRY, LITERAL_FINALLY, LITERAL_CATCH"/>
-    </module>
 
-    <module name="WhitespaceAfter"/>
     <module name="UnusedImports"/>
 </module>
