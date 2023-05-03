@@ -8,10 +8,6 @@
         <module name="JavadocType"/>
         <module name="JavadocMethod"/>
         <module name="JavadocVariable"/>
-        <module name="JavadocStyle">
-            <property name="allowedHtmlTags"
-                      value="b,i,u,sub,sup,ul,ol,li,code,pre,a"/>
-        </module>
     </module>
 
     <module name="EmptyBlock">
