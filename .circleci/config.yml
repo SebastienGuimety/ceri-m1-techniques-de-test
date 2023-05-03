@@ -8,30 +8,20 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/openjdk:11-jdk
-
-    executor: maven/default
-    working_directory: ~/my-project
-
+      - image: cimg/openjdk:11.0
     steps:
       - checkout
       - run:
           name: Build project
-          command: mvn -B -D skiptests clean install
+          command: mvn -B -Dskiptests clean package
       - run:
           name: Run tests
           command: mvn test
+      - codecov/upload
       - codecov/upload:
           flags: -f target/site/jacoco/jacoco.xml
 
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "pom.xml" }}
-            - v1-dependencies-
-      - save_cache:
-          paths:
-            - ~/.m2
-          key: v1-dependencies-{{ checksum "pom.xml" }}
+
 
 
 workflows:
