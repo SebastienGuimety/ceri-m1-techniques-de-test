@@ -10,10 +10,6 @@
         <module name="JavadocVariable"/>
     </module>
 
-    <module name="EmptyBlock">
-        <property name="option"
-                  value="TEXT"/>
-    </module>
 
     <module name="FileTabCharacter">
         <property name="eachLine"
