@@ -60,6 +60,7 @@
                             <failOnViolation>true</failOnViolation>
                         </configuration>
                         <goals>
+
                             <goal>check</goal>
                         </goals>
                     </execution>
