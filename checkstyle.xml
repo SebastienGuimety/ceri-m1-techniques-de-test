@@ -21,7 +21,4 @@
 
     <module name="NewlineAtEndOfFile"/>
 
-
-
-    <module name="UnusedImports"/>
 </module>
