@@ -1,0 +1,12 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+my-project,fr.univavignon.pokedex.api,Team,21,0,0,0,4,0,1,0,1,0
+my-project,fr.univavignon.pokedex.api,PokemonFactory,42,0,2,0,7,0,3,0,2,0
+my-project,fr.univavignon.pokedex.api,PokedexException,4,0,0,0,2,0,1,0,1,0
+my-project,fr.univavignon.pokedex.api,PokemonMetadataProvider,66,0,8,0,14,0,6,0,2,0
+my-project,fr.univavignon.pokedex.api,Pokedex,63,0,0,0,15,0,8,0,8,0
+my-project,fr.univavignon.pokedex.api,PokemonMetadata,15,18,0,0,5,7,5,1,5,1
+my-project,fr.univavignon.pokedex.api,PokemonTrainerFactory,19,0,0,0,3,0,2,0,2,0
+my-project,fr.univavignon.pokedex.api,PokemonTrainer,21,0,0,0,8,0,4,0,4,0
+my-project,fr.univavignon.pokedex.api,PokedexFactory,9,0,0,0,2,0,2,0,2,0
+my-project,fr.univavignon.pokedex.api,PokemonComparators,41,0,0,0,8,0,3,0,3,0
+my-project,fr.univavignon.pokedex.api,Pokemon,15,23,0,0,5,7,5,1,5,1
