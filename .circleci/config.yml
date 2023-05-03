@@ -20,16 +20,7 @@ jobs:
       - codecov/upload
       - codecov/upload:
           flags: -f target/site/jacoco/jacoco.xml
-      - run:
-          name: Checkstyle
-          command: |
-            mvn checkstyle:checkstyle
-          when: always
-      - store_test_results:
-          path: target/surefire-reports
-      - store_artifacts:
-          path: target/site/checkstyle.html
-          destination: checkstyle-report/index.html
+
 
 
 
