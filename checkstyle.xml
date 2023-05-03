@@ -17,10 +17,7 @@
     </module>
 
     <module name="JavadocPackage"/>
-    <module name="JavadocVariable">
-        <property name="scope"
-                  value="private"/>
-    </module>
+
 
     <module name="NewlineAtEndOfFile"/>
     <module name="NoWhitespaceBefore">
