@@ -47,8 +47,6 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - "aa:13:a9:0c:97:9f:9b:eb:1b:f3:31:dc:75:9c:34:00"
-
-
       - run:
           name: Deploy Javadoc to GitHub Pages
           command: |
