@@ -39,23 +39,23 @@ jobs:
       - run:
           name: Build and test
           command: mvn clean verify
-            - run:
-                name: Generate Javadoc
-                command: mvn javadoc:javadoc
-            - run:
-                name: Deploy Javadoc to GitHub Pages
-                command: |
-                  git config --global user.email "seb.guimety@gmail.com"
-                  git config --global user.name "SebastienGuimety"
-                  mkdir gh-pages
-                  cp -r target/site/apidocs/* gh-pages/
-                  cd gh-pages
-                  git init
-                  git remote add origin git@github.com:SebastienGuimety/ceri-m1-techniques-de-test.git
-                  git checkout -b gh-pages
-                  git add .
-                  git commit -m "Deploy Javadoc to GitHub Pages"
-                  git push --force origin gh-pages
+      - run:
+          name: Generate Javadoc
+          command: mvn javadoc:javadoc
+      - run:
+          name: Deploy Javadoc to GitHub Pages
+          command: |
+            git config --global user.email "seb.guimety@gmail.com"
+            git config --global user.name "SebastienGuimety"
+            mkdir gh-pages
+            cp -r target/site/apidocs/* gh-pages/
+            cd gh-pages
+            git init
+            git remote add origin git@github.com:SebastienGuimety/ceri-m1-techniques-de-test.git
+            git checkout -b gh-pages
+            git add .
+            git commit -m "Deploy Javadoc to GitHub Pages"
+            git push --force origin gh-pages
 
 
 workflows:
