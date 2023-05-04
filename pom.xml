@@ -141,6 +141,7 @@
             <artifactId>checkstyle</artifactId>
             <version>10.9.3</version>
         </dependency>
+
         <dependency>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
